@@ -17,6 +17,17 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      -- mini comment for handeling code commenting
+      -- check https://github.com/echasnovski/mini.comment
+      --  for setup options
+      --  keys:
+      --    gc    :to comment
+      --    gcc   :toggle comment on current line
+      --    gc    :comment on visual selection
+      --    gc    :define comment textobject
+      --
+      require('mini.comment').setup()
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
