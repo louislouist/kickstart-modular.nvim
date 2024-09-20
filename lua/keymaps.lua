@@ -48,4 +48,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Add Exporer/Netrw keymap
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open [E]xplorer/netrw' })
 
+-- View Diagnotic
+vim.keymap.set('n', '<leader>vd', vim.diagnostic.open_float, { desc = '[V]iew [D]iagnotic' })
 -- vim: ts=2 sts=2 sw=2 et

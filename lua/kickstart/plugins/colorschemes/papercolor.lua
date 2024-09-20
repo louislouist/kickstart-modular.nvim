@@ -16,6 +16,10 @@ return {
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
+
+      -- set light or dark theme (dark it default)
+      vim.cmd.set 'background=light'
+      vim.cmd.set 't_Co=256'
     end,
   },
 }
