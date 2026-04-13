@@ -2,7 +2,13 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+<<<<<<< HEAD
+return {
+  { 'dmmulroy/ts-error-translator.nvim' },
+}
+=======
 
 ---@module 'lazy'
 ---@type LazySpec
 return {}
+>>>>>>> upstream
