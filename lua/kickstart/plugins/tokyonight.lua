@@ -24,10 +24,26 @@ return {
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
 
+      -- brighten up comments for readability.
+      vim.api.nvim_set_hl(0, 'Comment', { fg = '#7f8dbb' })
+      -- vim.api.nvim_set_hl(0, 'Comment', { fg = '#8f9ac8' })
+      -- vim.api.nvim_set_hl(0, 'Comment', { fg = '#a9b1d6' })
+      -- vim.api.nvim_set_hl(0, 'Comment', { fg = '#c0caf5' }) -- very bright
+
       --set highlight group
       --background hugh removed
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+
+      -- Active window (current)
+      vim.api.nvim_set_hl(0, 'Normal', { bg = '#0a0a0a' }) -- darker
+
+      -- Inactive windows
+      vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#1a1b26' }) -- slightly gray
+
+      -- Floating windows (optional consistency)
+      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#0a0a0a' })
+
+      -- Optional: make split borders clearer
+      vim.api.nvim_set_hl(0, 'WinSeparator', { fg = '#3b4261' })
     end,
   },
 }
