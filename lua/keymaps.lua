@@ -18,13 +18,20 @@ vim.diagnostic.config {
   virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
   -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
-  jump = { float = true },
+  -- jump = { float = true }, // will be deprecated in 0.14
+  jump = {
+    on_jump = function(diagnostic, bufnr)
+      if diagnostic then vim.diagnostic.open_float(bufnr, {
+        border = 'rounded',
+        source = 'if_many',
+        focus = false,
+      }) end
+    end,
+  },
 }
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-vim.keymap.set('n', '<leader>dq', function()
-  vim.diagnostic.setqflist { open = true }
-end, { desc = 'Project-wide [d]iagnostics [Q]uickfix' })
+vim.keymap.set('n', '<leader>dq', function() vim.diagnostic.setqflist { open = true } end, { desc = 'Project-wide [d]iagnostics [Q]uickfix' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
