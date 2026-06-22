@@ -73,4 +73,12 @@ vim.o.confirm = true
 vim.opt.foldmethod = 'syntax'
 vim.opt.foldlevel = 99
 
+-- golang templets
+vim.filetype.add {
+  extension = {
+    tmpl = 'gotmpl',
+    gotmpl = 'gotmpl',
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et
